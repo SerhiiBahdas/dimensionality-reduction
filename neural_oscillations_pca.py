@@ -60,7 +60,7 @@ smoothing_window = 0.01  # Example: 10 ms
 sigma = smoothing_window / dt
 
 # Smooth the data using the calculated sigma
-neural_data = gaussian_filter1d(neural_data, sigma=sigma, axis=0)
+neural_data_filt = gaussian_filter1d(neural_data, sigma=sigma, axis=0)
 
 # Create a figure with three subplots
 fig = plt.figure(figsize=(11, 9), dpi=700)
@@ -78,7 +78,7 @@ ax1.set_ylim(0, 100)  # Limit x-axis from 0 to T
 
 # Perform PCA on the time dimension of the raster data
 pca = PCA(n_components=3)
-pca_result = pca.fit_transform(neural_data)
+pca_result = pca.fit_transform(neural_data_filt)
 
 # Plot PC1 vs. time, PC2 vs. time, and PC3 vs. time in the second subplot with appealing colors
 ax2 = fig.add_subplot(2, 2, 3)
