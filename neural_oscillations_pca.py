@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Aug 16 23:53:30 2024
+Created on Sat Aug 17 06:34:30 2024
 
 @author: seba
 
@@ -80,7 +80,7 @@ ax1.set_ylim(0, 100)  # Limit x-axis from 0 to T
 pca = PCA(n_components=3)
 pca_result = pca.fit_transform(neural_data_filt)
 
-# Plot PC1 vs. time, PC2 vs. time, and PC3 vs. time in the second subplot with appealing colors
+# Plot PC1 vs. time, PC2 vs. time, and PC3 vs. time in the second subplot
 ax2 = fig.add_subplot(2, 2, 3)
 ax2.plot(sim.trange(), pca_result[:, 0], label='PC1', color='#000000', linewidth=5)  # Pure Black
 ax2.plot(sim.trange(), pca_result[:, 1], label='PC2', color='#4F4F4F', linewidth=5)  # Dark Gray
